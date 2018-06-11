@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+	"flag"
 	"fmt"
 	"os"
 
@@ -13,9 +14,10 @@ func main() {
 		exit("please provide a ticker to fetch")
 	}
 
-	ticker := os.Args[1]
+	ticker := flag.String("ticker", "", "ticker to fetch quote for")
+	flag.Parse()
 
-	quote, err := equity.Get(ticker)
+	quote, err := equity.Get(*ticker)
 	exitOn(err)
 
 	fmt.Println(quote.RegularMarketPrice)

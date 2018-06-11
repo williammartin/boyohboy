@@ -1,0 +1,7 @@
+commands:
+  entrypoint:
+    help: Fetches the latest trade price for a stock ticker
+    arguments:
+      ticker:
+        type: string
+        required: true

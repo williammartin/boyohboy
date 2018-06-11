@@ -19,7 +19,7 @@ var _ = Describe("BoyOhBoy", func() {
 
 	BeforeEach(func() {
 		bobCmd = exec.Command(boyOhBoyPath)
-		bobCmd.Args = append(bobCmd.Args, "PVTL")
+		bobCmd.Args = append(bobCmd.Args, "--ticker", "PVTL")
 	})
 
 	JustBeforeEach(func() {
