@@ -3,6 +3,7 @@ package integration_test
 import (
 	"os/exec"
 	"testing"
+	"time"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
@@ -21,8 +22,7 @@ var _ = AfterSuite(func() {
 	gexec.CleanupBuildArtifacts()
 })
 
-var execBOB = func(args ...string) *gexec.Session {
-	cmd := exec.Command(boyOhBoyPath, args...)
+var execBin = func(cmd *exec.Cmd) *gexec.Session {
 	session, err := gexec.Start(cmd, GinkgoWriter, GinkgoWriter)
 	Expect(err).NotTo(HaveOccurred())
 	return session
@@ -30,5 +30,6 @@ var execBOB = func(args ...string) *gexec.Session {
 
 func TestIntegration(t *testing.T) {
 	RegisterFailHandler(Fail)
+	SetDefaultEventuallyTimeout(time.Second * 5)
 	RunSpecs(t, "BoyOhBoy Integration Suite")
 }
