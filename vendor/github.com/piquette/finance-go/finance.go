@@ -28,7 +28,7 @@ const (
 	// YFinBackend is a constant representing the yahoo service backend.
 	YFinBackend SupportedBackend = "yahoo"
 	// YFinURL is the URL of the yahoo service backend.
-	YFinURL string = "https://query2.finance.yahoo.com"
+	YFinURL string = "http://query2.finance.yahoo.com"
 	// BATSBackend is a constant representing the uploads service backend.
 	BATSBackend SupportedBackend = "bats"
 	// BATSURL is the URL of the uploads service backend.
@@ -38,7 +38,7 @@ const (
 	// ------------------
 
 	defaultHTTPTimeout = 80 * time.Second
-	yFinURL            = "https://query2.finance.yahoo.com"
+	yFinURL            = "http://query2.finance.yahoo.com"
 	batsURL            = ""
 )
 
