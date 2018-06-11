@@ -18,7 +18,7 @@ func main() {
 	quote, err := equity.Get(ticker)
 	exitOn(err)
 
-	fmt.Printf("$%f\n", quote.RegularMarketPrice)
+	fmt.Println(quote.RegularMarketPrice)
 }
 
 func exit(reason string) {
@@ -27,7 +27,7 @@ func exit(reason string) {
 
 func exitOn(err error) {
 	if err != nil {
-		fmt.Fprint(os.Stderr, err.Error())
+		fmt.Fprintln(os.Stderr, err.Error())
 		os.Exit(1)
 	}
 }

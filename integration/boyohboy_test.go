@@ -31,7 +31,7 @@ var _ = Describe("BoyOhBoy", func() {
 	})
 
 	It("prints some price in dollars", func() {
-		Eventually(session).Should(gbytes.Say(`[$]\d+\.\d+`))
+		Eventually(session).Should(gbytes.Say(`\d+\.\d+`))
 	})
 
 	Context("when no ticker is provided", func() {
