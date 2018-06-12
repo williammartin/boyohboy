@@ -1,5 +1,6 @@
 commands:
   entrypoint:
+    format: --ticker {{ticker}}
     help: Fetches the latest trade price for a stock ticker
     arguments:
       ticker:
