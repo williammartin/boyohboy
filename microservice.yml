@@ -1,9 +1,23 @@
-commands:
-  entrypoint:
-    format: --ticker {{ticker}}
+omg: 1
+info:
+ version: 0.0.1
+ title: Boy Oh Boy
+ description: A service to fetch stock prices
+ license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+lifecycle:
+  startup:
+    command: ["/boyohboy", "lifecycle"]
+actions:
+  fetch:
+    format:
+      command: ["/boyohboy"]
     help: Fetches the latest trade price for a stock ticker
     arguments:
       ticker:
         help: Stock ticker symbol
         type: string
         required: true
+    output:
+     type: float

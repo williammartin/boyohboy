@@ -8,14 +8,14 @@ There are two ways to build this, directly as a binary via:
 
 ```
 go build
-./boyohboy --ticker PVTL
+./boyohboy fetch "{ \"ticker\": \"PVTL\" }"
 ```
 
 or via Docker:
 
 ```
 docker build -t boyohboy:latest .
-docker run boyohboy --ticker PVTL
+docker run boyohboy /boyohboy fetch "{ \"ticker\": \"PVTL\" }"
 ```
 
 ## Running the tests
